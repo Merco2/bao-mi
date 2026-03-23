@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bao Mi | Full Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --red:#C0392B; --ivory:#FDF6EC; --charcoal:#1C1C1C; --gold:#F39C12; --green:#27AE60; --white:#fff; --shadow:0 12px 28px rgba(0,0,0,.16); --radius:16px; --max-width:1160px; }
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:"Open Sans",sans-serif;background:var(--ivory);color:var(--charcoal);line-height:1.6}
+    h1,h2,h3,.brand{font-family:"Bebas Neue",sans-serif;letter-spacing:.04em} a{text-decoration:none;color:inherit}
+    .container{width:min(92%,var(--max-width));margin:0 auto}
+    .site-header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(8px);background:rgba(28,28,28,.78);border-bottom:1px solid rgba(253,246,236,.15)}
+    .nav-wrap{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{color:var(--ivory);font-size:2rem}
+    .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;background:transparent;border:1px solid rgba(253,246,236,.4);border-radius:10px;color:var(--ivory)}
+    .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{display:block;width:18px;height:2px;background:var(--ivory);position:relative;content:""}.nav-toggle span::before{position:absolute;top:-6px}.nav-toggle span::after{position:absolute;top:6px}
+    .nav-links{position:absolute;top:70px;left:0;right:0;background:rgba(28,28,28,.96);display:grid;max-height:0;overflow:hidden;transition:max-height .3s ease}.nav-links a{color:var(--ivory);padding:.95rem 1.1rem;border-top:1px solid rgba(253,246,236,.08);font-weight:600}
+    .nav-open .nav-links{max-height:260px}
+    main{padding:2rem 0 3.5rem}.hero{text-align:center;margin-bottom:1.5rem}.hero h1{font-size:clamp(3rem,10vw,5rem);color:var(--red)}
+    .menu-grid{display:grid;gap:1rem}.menu-section{background:var(--white);border-radius:var(--radius);padding:1.15rem;box-shadow:0 8px 20px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.08)}
+    .menu-section h2{font-size:2rem;color:var(--red);margin-bottom:.4rem}.section-note{font-size:.93rem;color:rgba(28,28,28,.75);margin-bottom:.6rem}
+    .item{border-top:1px solid rgba(0,0,0,.08);padding:.62rem 0}.item:first-of-type{border-top:0}.item-head{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;align-items:center}
+    .name{font-weight:700}.price{background:rgba(192,57,43,.1);color:var(--red);font-weight:700;border-radius:999px;padding:.14rem .58rem}.desc{font-size:.94rem;color:rgba(28,28,28,.86);margin-top:.2rem}
+    footer{background:var(--charcoal);color:var(--ivory);text-align:center;padding:1.3rem 0 1.8rem;margin-top:1.5rem}
+    @media (min-width:860px){.nav-toggle{display:none}.nav-links{position:static;max-height:none;display:flex;background:transparent}.nav-links a{border:0;padding:.3rem .65rem}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.menu-section.full{grid-column:1/-1}}
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap" id="navRoot">
+      <a href="index.html" class="brand">Bao Mi</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+      <nav class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="#banhmi">Bánh Mì</a><a href="#pho">Pho</a><a href="#drinks">Drinks</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero"><h1>Menu</h1></section>
+      <div class="menu-grid">
+        <section class="menu-section" id="banhmi"><h2>Bánh Mì</h2><p class="section-note">Contains pate, egg mayo, cucumber, pickled carrot & daikon, fried shallot, lettuce, coriander, spring onion & fresh chilli (optional)</p>
+          <div class="item"><div class="item-head"><span class="name">Crispy Pork (bánh mì heo quay)</span><span class="price">$9.50</span></div></div><div class="item"><div class="item-head"><span class="name">Mixed Ham (bánh mì thịt nguội)</span><span class="price">$9</span></div></div><div class="item"><div class="item-head"><span class="name">Grilled Pork (bánh mì sườn)</span><span class="price">$9</span></div></div><div class="item"><div class="item-head"><span class="name">Grilled Chicken (bánh mì gà nướng)</span><span class="price">$9</span></div></div><div class="item"><div class="item-head"><span class="name">Meat Ball (bánh mì xíu mại)</span><span class="price">$9</span></div></div><div class="item"><div class="item-head"><span class="name">Tofu (bánh mì tàu hủ)</span><span class="price">$9</span></div></div><div class="item"><div class="item-head"><span class="name">Veggie (bánh mì rau chay)</span><span class="price">$9</span></div></div><div class="item"><div class="item-head"><span class="name">Bacon & Egg (bánh mì trứng và bacon)</span><span class="price">$9</span></div></div>
+        </section>
+
+        <section class="menu-section"><h2>Bao Buns</h2><p class="section-note">Contains fresh veg, carrot, cucumber & sauce (2 per serve)</p>
+          <div class="item"><div class="item-head"><span class="name">Crispy Pork</span><span class="price">$12.90</span></div></div><div class="item"><div class="item-head"><span class="name">Grilled Chicken</span><span class="price">$12.90</span></div></div><div class="item"><div class="item-head"><span class="name">Crispy Tofu</span><span class="price">$11.90</span></div></div><div class="item"><div class="item-head"><span class="name">Braised Pork (thịt kho)</span><span class="price">$11.90</span></div></div><div class="item"><div class="item-head"><span class="name">Softshell Crab</span><span class="price">$14.90</span></div></div>
+        </section>
+
+        <section class="menu-section"><h2>Rice Paper Rolls (Gỏi Cuốn)</h2><p class="section-note">Single $4ea | Any 2 $7.80</p><div class="item"><div class="item-head"><span class="name">Grilled Chicken / Pork & Prawn / Tofu / Chicken & Avocado</span></div></div></section>
+        <section class="menu-section"><h2>Spring Rolls (Chả Giò)</h2><p class="section-note">3pcs $6.50 / 6pcs $12</p><div class="item"><div class="item-head"><span class="name">Chicken / Pork / Prawn / Vegetables</span></div></div></section>
+        <section class="menu-section"><h2>Wontons</h2><div class="item"><div class="item-head"><span class="name">Steam Wontons 4pcs / 8pcs</span><span class="price">$8 / $14</span></div></div><div class="item"><div class="item-head"><span class="name">Fried Wontons 4pcs / 8pcs</span><span class="price">$8 / $14</span></div></div></section>
+        <section class="menu-section"><h2>Salad Bowl</h2><p class="section-note">Fresh greens with topping of choice & sauce</p><div class="item"><div class="item-head"><span class="name">Grilled Chicken / BBQ Pork</span><span class="price">$16.50</span></div></div><div class="item"><div class="item-head"><span class="name">Lemongrass Beef</span><span class="price">$17</span></div></div><div class="item"><div class="item-head"><span class="name">Tofu & Avocado</span><span class="price">$16</span></div></div></section>
+
+        <section class="menu-section"><h2>Vermicelli Noodles (Bún)</h2><p class="section-note">Served with fresh salads & sauce</p><div class="item"><div class="item-head"><span class="name">Grilled Chicken</span><span class="price">$15.90</span></div></div><div class="item"><div class="item-head"><span class="name">Chicken / Pork / Prawn / Vegetable Spring Roll</span><span class="price">$15.90</span></div></div><div class="item"><div class="item-head"><span class="name">Lemongrass Beef</span><span class="price">$17</span></div></div><div class="item"><div class="item-head"><span class="name">BBQ Pork</span><span class="price">$15.90</span></div></div><div class="item"><div class="item-head"><span class="name">Tofu & Avocado</span><span class="price">$15.90</span></div></div><div class="item"><div class="item-head"><span class="name">Lemongrass Tofu</span><span class="price">$15.90</span></div></div></section>
+        <section class="menu-section"><h2>Rice (Cơm)</h2><p class="section-note">Served with fresh salad & dipping sauce</p><div class="item"><div class="item-head"><span class="name">Pork Chop on Rice (Cơm sườn)</span><span class="price">$15.90</span></div></div><div class="item"><div class="item-head"><span class="name">Crispy Skin Chicken</span><span class="price">$15.90</span></div></div><div class="item"><div class="item-head"><span class="name">Grilled Chicken (Cơm gà nướng)</span><span class="price">$14.90</span></div></div><div class="item"><div class="item-head"><span class="name">Crackling Roast Pork (Cơm heo quay)</span><span class="price">$15.90</span></div></div><div class="item"><div class="item-head"><span class="name">Lemongrass Beef (Cơm bò xào sả ớt)</span><span class="price">$15.90</span></div></div><div class="item"><div class="item-head"><span class="name">Lemongrass Tofu</span><span class="price">$15.90</span></div></div><div class="item"><div class="item-head"><span class="name">Special Fried Rice</span><span class="price">$15.90</span></div></div></section>
+
+        <section class="menu-section full" id="pho"><h2>Pho — Vietnamese Noodle Soup</h2><p class="section-note">Slow cooked aromatic beef stock, served with fresh salads</p>
+          <div class="item"><div class="item-head"><span class="name">Sliced Beef (Phở tái bò)</span><span class="price">Reg $14.90 / Lrg $16.90</span></div></div><div class="item"><div class="item-head"><span class="name">Beef Brisket (Phở bò gầu)</span><span class="price">Reg $14.90 / Lrg $16.90</span></div></div><div class="item"><div class="item-head"><span class="name">Beef Balls (Phở bò viên)</span><span class="price">Reg $14.90 / Lrg $16.90</span></div></div><div class="item"><div class="item-head"><span class="name">Combination Beef (Phở bò đặc biệt)</span><span class="price">Reg $15.50 / Lrg $17.90</span></div></div><div class="item"><div class="item-head"><span class="name">Chicken (Phở gà)</span><span class="price">Reg $14.90 / Lrg $16.90</span></div></div><div class="item"><div class="item-head"><span class="name">Combination Beef & Chicken (Phở bò, gà đặc biệt)</span><span class="price">Reg $15.90 / Lrg $18.90</span></div></div><div class="item"><div class="item-head"><span class="name">Tofu and Vegetable</span><span class="price">Reg $14.90 / Lrg $16.90</span></div></div>
+        </section>
+
+        <section class="menu-section"><h2>Bún Bò Huế — Spice Beef Noodle Soup</h2><div class="item"><div class="item-head"><span class="name">Slice Beef</span><span class="price">$16.90</span></div></div><div class="item"><div class="item-head"><span class="name">Slice Beef and Pork</span><span class="price">$18.90</span></div></div></section>
+        <section class="menu-section"><h2>Kid Menu</h2><div class="item"><div class="item-head"><span class="name">Calamari Rings (3) and Chips</span><span class="price">$10</span></div></div><div class="item"><div class="item-head"><span class="name">Chicken Nuggets and Chips</span><span class="price">$10</span></div></div><div class="item"><div class="item-head"><span class="name">Little Pho Noodles Soup</span><span class="price">$6.90</span></div></div><div class="item"><div class="item-head"><span class="name">Little Fried Rice</span><span class="price">$6.90</span></div></div></section>
+
+        <section class="menu-section full" id="drinks"><h2>Bubble Tea (Trà Sữa)</h2>
+          <div class="item"><div class="item-head"><span class="name">Milk Tea (Royal, Brown Sugar Fresh Milk, Thai, Purple Taro, Matcha, Chocolate, Mango, Honeydew, Strawberry, Watermelon)</span><span class="price">Reg $6.50 / Lrg $7.50</span></div></div>
+          <div class="item"><div class="item-head"><span class="name">Fruit Tea (Peach, Mango, Guava, Strawberry, Lychee, Passionfruit, Honeydew, Grape)</span><span class="price">Reg $6.50 / Lrg $7.50</span></div></div>
+          <div class="item"><div class="item-head"><span class="name">Smoothie (Taro, Mango, Strawberry, Honeydew, Chocolate, Matcha, Lychee)</span><span class="price">Reg $7.50 / Lrg $8.50</span></div></div>
+          <div class="item"><div class="item-head"><span class="name">Ice Blend (Lychee, Mango, Strawberry, Passionfruit, Honeydew, Peach, Watermelon)</span><span class="price">Reg $7.50 / Lrg $8.50</span></div></div>
+          <div class="item"><p class="desc">Toppings: Black pearls, white pearls, rainbow jelly, lychee jelly, coconut jelly, caramel jelly, popping pearls (Mango/Passionfruit/Blueberry/Strawberry)</p></div>
+        </section>
+
+        <section class="menu-section"><h2>Drink Menu</h2><div class="item"><div class="item-head"><span class="name">Vietnamese Iced Coffee</span><span class="price">$5</span></div></div><div class="item"><div class="item-head"><span class="name">Avocado Smoothies</span><span class="price">$8</span></div></div><div class="item"><div class="item-head"><span class="name">Bubble Tea (see above)</span></div></div></section>
+      </div>
+    </div>
+  </main>
+
+  <footer><div class="container"><p>© 2026 Bao Mi</p><p><a href="index.html">Back to Home</a></p></div></footer>
+
+  <script>
+    (function(){const navRoot=document.getElementById('navRoot');const navToggle=document.getElementById('navToggle');const navLinks=document.getElementById('navLinks');navToggle.addEventListener('click',function(){const open=navRoot.classList.toggle('nav-open');navToggle.setAttribute('aria-expanded',String(open));});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navRoot.classList.remove('nav-open');navToggle.setAttribute('aria-expanded','false');}));})();
+  </script>
+</body>
+</html>
