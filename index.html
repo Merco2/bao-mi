@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bao Mi | Authentic Vietnamese Bánh Mì in Templestowe Lower</title>
+  <meta name="description" content="Bao Mi is a family-run Vietnamese street food shop in Templestowe Lower, Melbourne. Fresh bánh mì, house-made pâté, pickled vegetables, premium fillings, and Vietnamese iced coffee." />
+  <meta name="keywords" content="Bao Mi, banh mi, bánh mì, Vietnamese food, Templestowe Lower, Melbourne, street food" />
+  <meta name="author" content="Bao Mi" />
+  <meta property="og:title" content="Bao Mi | Authentic Vietnamese Bánh Mì" />
+  <meta property="og:description" content="A taste of Saigon in the suburbs of Melbourne. Fresh baguettes baked daily at Bao Mi, Templestowe Lower." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_AU" />
+  <meta name="theme-color" content="#C0392B" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --red: #C0392B;
+      --ivory: #FDF6EC;
+      --charcoal: #1C1C1C;
+      --gold: #F39C12;
+      --green: #27AE60;
+      --white: #ffffff;
+      --shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+      --radius: 16px;
+      --max-width: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--charcoal);
+      background: var(--ivory);
+      line-height: 1.6;
+    }
+
+    img, iframe { max-width: 100%; }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    h1, h2, h3, .brand {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.04em;
+      margin: 0 0 0.6rem;
+      line-height: 1.05;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--red);
+    }
+
+    p { margin: 0 0 1rem; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .section {
+      padding: 4.5rem 0;
+      position: relative;
+    }
+
+    /* Header/Nav */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      background: rgba(28, 28, 28, 0.78);
+      border-bottom: 1px solid rgba(253, 246, 236, 0.15);
+    }
+
+    .nav-wrap {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      color: var(--ivory);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background: transparent;
+      border: 1px solid rgba(253, 246, 236, 0.4);
+      border-radius: 10px;
+      color: var(--ivory);
+      cursor: pointer;
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--ivory);
+      border-radius: 2px;
+      position: relative;
+      transition: 0.25s ease;
+      content: "";
+    }
+
+    .nav-toggle span::before { position: absolute; top: -6px; }
+    .nav-toggle span::after { position: absolute; top: 6px; }
+
+    .nav-links {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: rgba(28, 28, 28, 0.96);
+      display: grid;
+      gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      border-bottom: 1px solid rgba(253, 246, 236, 0.15);
+    }
+
+    .nav-links a {
+      color: var(--ivory);
+      padding: 0.95rem 1.1rem;
+      border-top: 1px solid rgba(253, 246, 236, 0.08);
+      font-weight: 600;
+    }
+
+    .nav-open .nav-links { max-height: 260px; }
+    .nav-open .nav-toggle span { background: transparent; }
+    .nav-open .nav-toggle span::before { transform: translateY(6px) rotate(45deg); }
+    .nav-open .nav-toggle span::after { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Hero */
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--ivory);
+      background: radial-gradient(circle at 25% 20%, rgba(243, 156, 18, 0.18), transparent 42%),
+                  linear-gradient(135deg, var(--red) 0%, #98281d 35%, var(--charcoal) 100%);
+      position: relative;
+      overflow: hidden;
+      padding-top: 88px;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(253, 246, 236, 0.08);
+      filter: blur(2px);
+    }
+
+    .hero::before {
+      width: 360px;
+      height: 360px;
+      right: -120px;
+      top: 15%;
+    }
+
+    .hero::after {
+      width: 260px;
+      height: 260px;
+      left: -80px;
+      bottom: 10%;
+    }
+
+    .hero-title {
+      font-size: clamp(4rem, 14vw, 9rem);
+      margin-bottom: 0.35rem;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 3.2vw, 1.4rem);
+      margin-bottom: 1.8rem;
+      font-weight: 600;
+      opacity: 0.96;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 2px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-btn:hover,
+    .hero-btn:focus-visible {
+      transform: translateY(-3px);
+      border-color: var(--ivory);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-flourish {
+      position: absolute;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      opacity: 0.66;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.22));
+      animation: float 5s ease-in-out infinite;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .f1 { top: 22%; left: 8%; animation-delay: 0s; }
+    .f2 { top: 30%; right: 10%; animation-delay: 1.2s; }
+    .f3 { bottom: 18%; left: 14%; animation-delay: 2s; }
+    .f4 { bottom: 16%; right: 15%; animation-delay: 2.8s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(4deg); }
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+
+    .about-copy {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .about-panel {
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      color: var(--ivory);
+      background: linear-gradient(145deg, #de6d1f, var(--red));
+      display: grid;
+      align-content: center;
+      min-height: 220px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-panel::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -60px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(253, 246, 236, 0.16);
+    }
+
+    .about-panel strong {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: 0.03em;
+    }
+
+    /* Menu */
+    .menu {
+      background: #fff9f0;
+    }
+
+    .menu-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .menu-card {
+      background: var(--white);
+      border: 2px solid transparent;
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--red);
+      box-shadow: 0 16px 24px rgba(0,0,0,0.12);
+    }
+
+    .menu-icon { font-size: 1.7rem; }
+    .menu-card h3 {
+      font-size: 1.7rem;
+      margin-top: 0.45rem;
+      color: var(--charcoal);
+    }
+
+    .price {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: var(--red);
+      font-weight: 700;
+      background: rgba(192, 57, 43, 0.1);
+      padding: 0.28rem 0.64rem;
+      border-radius: 999px;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      gap: 0.8rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tile {
+      border-radius: 14px;
+      min-height: 120px;
+      display: flex;
+      align-items: flex-end;
+      padding: 0.8rem;
+      color: var(--ivory);
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .tile::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 40%, rgba(0,0,0,0.42));
+    }
+
+    .tile span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .t1 { background: linear-gradient(135deg, #f39c12, #c0392b); }
+    .t2 { background: linear-gradient(135deg, #8e2b1f, #1c1c1c); }
+    .t3 { background: linear-gradient(135deg, #f0a202, #b93d2c); }
+    .t4 { background: linear-gradient(135deg, #27ae60, #165b33); }
+    .t5 { background: linear-gradient(135deg, #7f4f24, #c0392b); }
+    .t6 { background: linear-gradient(135deg, #c0392b, #27ae60); }
+
+    /* Testimonials */
+    .testimonials {
+      background: linear-gradient(to bottom, #fffdf8, #fff6eb);
+    }
+
+    .review-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.09);
+      border-left: 5px solid var(--gold);
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .reviewer {
+      margin-top: 0.7rem;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    /* Visit */
+    .visit-grid {
+      display: grid;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .visit-info,
+    .visit-map {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .visit-info ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .visit-info li strong { color: var(--red); }
+
+    .visit-map iframe {
+      border: 0;
+      width: 100%;
+      min-height: 280px;
+      border-radius: 12px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 1.4rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      margin: 0.6rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (min-width: 700px) {
+      .about-grid {
+        grid-template-columns: 1.2fr 1fr;
+      }
+
+      .review-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .visit-grid {
+        grid-template-columns: 1fr 1.2fr;
+      }
+    }
+
+    @media (min-width: 860px) {
+      .nav-toggle { display: none; }
+
+      .nav-links {
+        position: static;
+        max-height: none;
+        display: flex;
+        background: transparent;
+        border: 0;
+      }
+
+      .nav-links a {
+        border: 0;
+        padding: 0.3rem 0.65rem;
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap" id="navRoot">
+      <a href="#top" class="brand" aria-label="Bao Mi home">Bao Mi</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit">Visit Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="hero-flourish f1">🥖</span>
+      <span class="hero-flourish f2">🌿</span>
+      <span class="hero-flourish f3">🌶️</span>
+      <span class="hero-flourish f4">🥖</span>
+      <div class="container reveal">
+        <h1 class="hero-title">Bao Mi</h1>
+        <p class="hero-tagline">Authentic Vietnamese Bánh Mì · Templestowe Lower</p>
+        <a href="#menu" class="hero-btn">See Our Menu</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <article class="about-copy reveal">
+          <h2>Our Story</h2>
+          <p>Family-run Vietnamese eatery bringing authentic bánh mì to Templestowe Lower. Fresh baguettes baked daily, house-made pâté, pickled vegetables, and premium fillings. A taste of Saigon in the suburbs of Melbourne.</p>
+        </article>
+        <aside class="about-panel reveal" aria-label="Decorative panel">
+          <strong>Fresh Daily.</strong>
+          <p>From crusty baguettes to vibrant herbs, every roll is made to order with that unmistakable street-food punch.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="menu" class="section menu">
+      <div class="container">
+        <h2 class="reveal">Menu Highlights</h2>
+        <div class="menu-grid">
+          <article class="menu-card reveal">
+            <div class="menu-icon" aria-hidden="true">🥖</div>
+            <h3>Classic Bánh Mì</h3>
+            <p>Traditional cold cuts, pâté, pickled veg, cucumber, coriander, and chilli in a crisp baguette.</p>
+            <span class="price">$X.XX</span>
+          </article>
+          <article class="menu-card reveal">
+            <div class="menu-icon" aria-hidden="true">🍖</div>
+            <h3>BBQ Pork Roll</h3>
+            <p>Smoky marinated pork, tangy daikon-carrot pickle, and fresh herbs with signature house sauce.</p>
+            <span class="price">$X.XX</span>
+          </article>
+          <article class="menu-card reveal">
+            <div class="menu-icon" aria-hidden="true">🥬</div>
+            <h3>Vegetarian Delight</h3>
+            <p>Crispy tofu, umami mushroom blend, crunchy greens, and zesty pickles in warm crusty bread.</p>
+            <span class="price">$X.XX</span>
+          </article>
+          <article class="menu-card reveal">
+            <div class="menu-icon" aria-hidden="true">🧋</div>
+            <h3>Vietnamese Iced Coffee</h3>
+            <p>Strong dark roast drip coffee over ice with creamy condensed milk — sweet, bold, unforgettable.</p>
+            <span class="price">$X.XX</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="reveal">Gallery</h2>
+        <div class="gallery-grid">
+          <div class="tile t1 reveal"><span>Fresh Baguettes</span></div>
+          <div class="tile t2 reveal"><span>BBQ Pork</span></div>
+          <div class="tile t3 reveal"><span>House Pâté</span></div>
+          <div class="tile t4 reveal"><span>Pickled Veg</span></div>
+          <div class="tile t5 reveal"><span>Iced Coffee</span></div>
+          <div class="tile t6 reveal"><span>Our Shop</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <h2 class="reveal">Locals Love Bao Mi</h2>
+        <div class="review-grid">
+          <article class="review-card reveal">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"Closest thing to the bánh mì I had in Ho Chi Minh City. Super fresh, packed with flavour, and always friendly service."</p>
+            <p class="reviewer">Linh N.</p>
+          </article>
+          <article class="review-card reveal">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"BBQ pork roll is unreal — crispy bread, juicy filling, great value. I swing by before work at least twice a week."</p>
+            <p class="reviewer">Tom W.</p>
+          </article>
+          <article class="review-card reveal">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"Everything tastes homemade and authentic. The iced coffee is dangerously good. Templestowe finally has a gem."</p>
+            <p class="reviewer">Rachel S.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit" class="section">
+      <div class="container visit-grid">
+        <article class="visit-info reveal">
+          <h2>Visit Us</h2>
+          <ul>
+            <li><strong>Address:</strong> 12 Macedon Rd, Templestowe Lower VIC 3107</li>
+            <li><strong>Hours:</strong> Mon–Fri 7am–5pm, Sat 7am–4pm, Sun Closed</li>
+            <li><strong>Phone:</strong> (03) XXXX XXXX</li>
+            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/baomitemplestowe" target="_blank" rel="noopener noreferrer">@baomitemplestowe</a></li>
+          </ul>
+        </article>
+        <div class="visit-map reveal">
+          <iframe
+            title="Map to Bao Mi in Templestowe Lower"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=12+Macedon+Rd,+Templestowe+Lower+VIC+3107&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Bao Mi · Templestowe Lower, Melbourne</p>
+      <div class="footer-links" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#visit">Visit Us</a>
+      </div>
+      <p>Website by [Your Agency]</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const navRoot = document.getElementById('navRoot');
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      const linkNodes = navLinks.querySelectorAll('a');
+
+      function closeNav() {
+        navRoot.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      navToggle.addEventListener('click', function () {
+        const isOpen = navRoot.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      linkNodes.forEach(function (link) {
+        link.addEventListener('click', closeNav);
+      });
+
+      const revealItems = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealItems.forEach(function (item) {
+        observer.observe(item);
+      });
+    })();
+  </script>
+</body>
+</html>
